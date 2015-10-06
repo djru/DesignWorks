@@ -6,6 +6,19 @@
 <link rel="stylesheet" href="./style.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://raw.githubusercontent.com/stevenschobert/instafeed.js/master/instafeed.min.js"></script>
+<script>
+  $('#sub').click(function(){
+    var query = $('#ig-feed').val();
+    
+  });
+  var feed = new Instafeed({
+        get: 'tagged',
+        tagName: query,
+        clientId: '3562b746cb8748ad842eb729f54bac1f'
+    });
+    feed.run();
+</script>
 <head>
 <body>
   <nav class="navbar navbar-default navbar-fixed-top">
@@ -33,6 +46,7 @@
 </nav>
   <div class="container" style="margin-top: 80px;">
     <input type="text" id="ig-feed" /><input type="submit" id="sub" />
+    <div id="instafeed"></div>
   </div>
   <footer><a href="http://twitter.com/danruswick">Twitter</a><a href="http://portfolio.danr.us">Portfolio</a><a href="http://github.com/djru">Github</a></footer>
 </body>
